@@ -2,21 +2,39 @@
 <rdf:RDF xmlns="http://www.semanticweb.org/delfi/ontologies/visense#"
      xml:base="http://www.semanticweb.org/delfi/ontologies/visense"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:DUL="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="https://w3id.org/musco">
-        <owl:imports rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl"/>
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:fschema="https://w3id.org/framester/schema/">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/delfi/ontologies/visense">
         <dc:creator>Delfina Sol Martinez Pandiani, Stefano De Giorgis and Fiorela Ciroku.</dc:creator>
         <rdfs:comment>This is the ontological module for the schema of the Visual Genome Ontology, it aims at representing the relations between objects in specific Regions of an Image.
 It implements some Ontology Design Patterns like Description and Situation and N-ary relation.
 It is furthermore aligned to DUL - Dolce Ultralight foundational Ontology and imports frame evocation classes from the Framester hub.</rdfs:comment>
         <owl:versionInfo>1.0 - Adding classes and properties.
 1.1 - DUL import and alignement + frame evocation properties import from Framester schema.
-1.2 - introduced data properties aligned with DUL + refined classes axiomatization</owl:versionInfo>
+1.2 - Introduced data properties aligned with DUL + refined classes axiomatization</owl:versionInfo>
     </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
     
 
 
@@ -31,19 +49,545 @@ It is furthermore aligned to DUL - Dolce Ultralight foundational Ontology and im
     
 
 
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSassociatedWith"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#classifies -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#classifies">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSclassifies"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasLocation -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasLocation">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VShasLocation"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasPart -->
 
-    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasPart">
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasPart">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VShasPart"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasSetting -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasSetting">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VShasSetting"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isAbout -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isAbout">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSisAbout"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isClassifiedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isClassifiedBy">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSisClassifiedBy"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSEntity"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Equivalent to dul:isClassifiedBy.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isLocationOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isLocationOf">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSisLocationOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isPartOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isPartOf">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSisPartOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isReferenceOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isReferenceOf">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSisReferenceOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isRelatedToConcept -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isRelatedToConcept">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSisRelatedToConcept"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSettingFor -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSettingFor">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSisSettingFor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/delfi/ontologies/visense#FREDFrameEvokedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#FREDFrameEvokedBy">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/framester/schema/evokedBy"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#evokesFREDFrame"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VGDepictedRegion"/>
+        <rdfs:comment>Some ConceptualFrame is evoked by some Entity in the FRED graph produced by some Description of some DepictedRegion.</rdfs:comment>
+        <rdfs:label xml:lang="en">FRED frame evoked by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/delfi/ontologies/visense#VSassociatedWith -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#VSassociatedWith">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSassociatedWith"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSEntity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSEntity"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Equivalent to dul:associatedWith.</rdfs:comment>
+        <rdfs:label>VSassociatedWith</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/delfi/ontologies/visense#VSattributeOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#VSattributeOf">
+        <rdfs:label xml:lang="en">attribute of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/delfi/ontologies/visense#VSclassifies -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#VSclassifies">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSassociatedWith"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSisClassifiedBy"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSEntity"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Equivalent to dul:classifies</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/delfi/ontologies/visense#VSevokedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#VSevokedBy">
+        <owl:equivalentProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://www.w3.org/ns/lemon/ontolex#evokes"/>
+            </rdf:Description>
+        </owl:equivalentProperty>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSevokes"/>
+        <rdfs:comment>Some ConceptualFrame or WordNet 3.0 synset is evoked by an Entity.</rdfs:comment>
+        <rdfs:label xml:lang="en">evoked by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/delfi/ontologies/visense#VSevokes -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#VSevokes">
+        <owl:equivalentProperty rdf:resource="http://www.w3.org/ns/lemon/ontolex#evokes"/>
+        <rdfs:comment>Some Entity evokes some ConceptualFrame or WordNet 3.0 synset.</rdfs:comment>
+        <rdfs:label xml:lang="en">evokes</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/delfi/ontologies/visense#VShasLocation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#VShasLocation">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSassociatedWith"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSisLocationOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSEntity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSEntity"/>
+        <rdfs:comment>Equivalent to dul:hasLocation.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/delfi/ontologies/visense#VShasPart -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#VShasPart">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSassociatedWith"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSisPartOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ReflexiveProperty"/>
-    </rdf:Description>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSEntity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSEntity"/>
+        <rdfs:comment>Equivalent to dul:hasPart.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/delfi/ontologies/visense#VShasSetting -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#VShasSetting">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSassociatedWith"/>
+        <rdfs:comment>Equivalent to dul:hasSetting.</rdfs:comment>
+        <rdfs:label>has setting</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/delfi/ontologies/visense#VSincludesObject -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#VSincludesObject">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSisSettingFor"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSisObjectIncludedIn"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSSituation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSObject"/>
+        <rdfs:comment>Equivalent to dul:includesObject.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/delfi/ontologies/visense#VSisAbout -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#VSisAbout">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSassociatedWith"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSisReferenceOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSInformationObject"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSEntity"/>
+        <rdfs:comment>Equivalent to dul:isAbout.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/delfi/ontologies/visense#VSisClassifiedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#VSisClassifiedBy">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Equivalent to DUL:isClassifiedBy</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/delfi/ontologies/visense#VSisLocationOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#VSisLocationOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSassociatedWith"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSEntity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSEntity"/>
+        <rdfs:comment>Equivalent to dul:isLocationOf</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/delfi/ontologies/visense#VSisObjectIncludedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#VSisObjectIncludedIn">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VShasSetting"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSObject"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSSituation"/>
+        <rdfs:comment>Equivalent to dul:isObjectIncludedIn.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/delfi/ontologies/visense#VSisPartOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#VSisPartOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSassociatedWith"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ReflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSEntity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSEntity"/>
+        <rdfs:comment>Equivalent to dul:isPartOf.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/delfi/ontologies/visense#VSisReferenceOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#VSisReferenceOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSassociatedWith"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSEntity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSInformationObject"/>
+        <rdfs:comment>Equivalent to dul:isReferenceOf.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/delfi/ontologies/visense#VSisRelatedToConcept -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#VSisRelatedToConcept">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSassociatedWith"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSisRelatedToConcept"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:comment>Equivalent to dul:isRelatedToConcept.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/delfi/ontologies/visense#VSisSettingFor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#VSisSettingFor">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSassociatedWith"/>
+        <rdfs:comment>Equivalent to dul:isSettingFor.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/delfi/ontologies/visense#VSontoType -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#VSontoType">
+        <owl:equivalentProperty rdf:resource="https://w3id.org/framester/schema/ontoType"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSWnSynsetFrame"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#VGDepictedObject"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#VGObjectAttr"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#VGObjectRel"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:comment>Some WordNet 3.0 synset types some DepictedObj, DepictedRel or ObjAttr.</rdfs:comment>
+        <rdfs:label xml:lang="en">ontoType</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/delfi/ontologies/visense#VSsubsumedUnder -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#VSsubsumedUnder">
+        <owl:equivalentProperty rdf:resource="https://w3id.org/framester/schema/subsumedUnder"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSsubsumes"/>
+        <rdfs:comment>Some WordNet 3.0 synset is subsumed under a ConceptualFrame.</rdfs:comment>
+        <rdfs:label xml:lang="en">subsumed under</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/delfi/ontologies/visense#VSsubsumes -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#VSsubsumes">
+        <owl:equivalentProperty rdf:resource="https://w3id.org/framester/schema/subsumes"/>
+        <rdfs:comment>Some ConceptualFrame subsumes some WordNet 3.0 synset.</rdfs:comment>
+        <rdfs:label xml:lang="en">subsumes</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/delfi/ontologies/visense#depicts -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#depicts">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSisAbout"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#isDepictedIn"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#ImageObject"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#VGDepictedObject"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#VGDepictedRegion"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:comment>Some ImageObject depicts some DepictedObject or DepictedRegion.</rdfs:comment>
+        <rdfs:label xml:lang="en">depicts</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/delfi/ontologies/visense#evokesFREDFrame -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#evokesFREDFrame">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/framester/schema/evokes"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VGDepictedRegion"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSConceptualFrame"/>
+        <rdfs:comment>Some DepictedRegion evokes some ConceptualFrame. (Note that the ConceptualFrame is evoked in the graph produced by FRED as output of the description of the DepictedRegion.</rdfs:comment>
+        <rdfs:label xml:lang="en">evokes FRED frame</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/delfi/ontologies/visense#hasRelObject -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#hasRelObject">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSclassifies"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#isRelObjectOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VGObjectRel"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VGDepictedObject"/>
+        <rdfs:comment>Some ObjectRelation takes some DepictedObject as object of the relationship.</rdfs:comment>
+        <rdfs:label xml:lang="en">has relationship object</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/delfi/ontologies/visense#hasRelSubject -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#hasRelSubject">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSclassifies"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#isRelSubjectOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VGObjectRel"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VGDepictedObject"/>
+        <rdfs:comment>Some ObjectRelation takes some DepictedObject as subject of the relationship.</rdfs:comment>
+        <rdfs:label xml:lang="en">has relationship subject</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/delfi/ontologies/visense#includesDepictedObject -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#includesDepictedObject">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSincludesObject"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#isDepictedObjectIncludedIn"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VGDepictedRegion"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VGDepictedObject"/>
+        <rdfs:comment>Some DepictedRegion includes (is the setting for) some DepictedObject.</rdfs:comment>
+        <rdfs:label xml:lang="en">includes depicted object</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/delfi/ontologies/visense#includesObjectRel -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#includesObjectRel">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSincludesObject"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#isObjectRelIncludedIn"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VGDepictedRegion"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VGObjectRel"/>
+        <rdfs:comment>Some DepictedRegion includes (is the setting for) some ObjectRelation.</rdfs:comment>
+        <rdfs:label xml:lang="en">includes object relationship</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/delfi/ontologies/visense#isDepictedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#isDepictedIn">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSisReferenceOf"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#VGDepictedObject"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#VGDepictedRegion"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#ImageObject"/>
+        <rdfs:comment>Some DepictedObject or DepictedRegion is depicted in some ImageObject.</rdfs:comment>
+        <rdfs:label xml:lang="en">is depicted in</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/delfi/ontologies/visense#isDepictedObjectIncludedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#isDepictedObjectIncludedIn">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSisObjectIncludedIn"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VGDepictedObject"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VGDepictedRegion"/>
+        <rdfs:comment>Some DepictedObject is included (has setting) in some DepictedRegion.</rdfs:comment>
+        <rdfs:label xml:lang="en">is depicted object included in</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/delfi/ontologies/visense#isObjectRelIncludedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#isObjectRelIncludedIn">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSisObjectIncludedIn"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VGObjectRel"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VGDepictedRegion"/>
+        <rdfs:comment>Some ObjectRelation is included (has setting) in some DepictedRegion.</rdfs:comment>
+        <rdfs:label xml:lang="en">is object relationship included in</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/delfi/ontologies/visense#isRelObjectOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#isRelObjectOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSisClassifiedBy"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VGDepictedObject"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VGObjectRel"/>
+        <rdfs:comment>Some DepictedObject is classified as the object of an ObjectRelation.</rdfs:comment>
+        <rdfs:label xml:lang="en">is relationship object of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/delfi/ontologies/visense#isRelSubjectOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#isRelSubjectOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSisClassifiedBy"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VGDepictedObject"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VGObjectRel"/>
+        <rdfs:comment>Some DepictedObject is classified as the subject of an ObjectRelation.</rdfs:comment>
+        <rdfs:label xml:lang="en">is relationship subject of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/delfi/ontologies/visense#isTypedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#isTypedBy">
+        <owl:inverseOf rdf:resource="https://w3id.org/framester/schema/ontoType"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#VGDepictedObject"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#VGObjectAttr"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#VGObjectRel"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSWnSynsetFrame"/>
+        <rdfs:comment>Some DepictedObj, DepictedRel or ObjAttr is typed by a WordNet 3.0 synset.</rdfs:comment>
+        <rdfs:label xml:lang="en">is typed by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/lemon/ontolex#evokes -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/lemon/ontolex#evokes"/>
     
 
 
     <!-- https://w3id.org/framester/schema/evokedBy -->
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/framester/schema/evokedBy">
-        <owl:inverseOf rdf:resource="https://w3id.org/framester/schema/evokes"/>
-    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="https://w3id.org/framester/schema/evokedBy"/>
     
 
 
@@ -55,220 +599,19 @@ It is furthermore aligned to DUL - Dolce Ultralight foundational Ontology and im
 
     <!-- https://w3id.org/framester/schema/ontoType -->
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/framester/schema/ontoType">
-        <owl:inverseOf rdf:resource="https://w3id.org/musco#isTypedBy"/>
-        <rdfs:domain rdf:resource="https://w3id.org/framester/schema/WnSynsetFrame"/>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://w3id.org/musco#VGDepictedObject"/>
-                    <rdf:Description rdf:about="https://w3id.org/musco#VGObjectAttr"/>
-                    <rdf:Description rdf:about="https://w3id.org/musco#VGObjectRel"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
-        <rdfs:comment>Some wn30syn types some DepictedObj, DepictedRel or ObjAttr.</rdfs:comment>
-    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="https://w3id.org/framester/schema/ontoType"/>
     
 
 
     <!-- https://w3id.org/framester/schema/subsumedUnder -->
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/framester/schema/subsumedUnder">
-        <owl:inverseOf rdf:resource="https://w3id.org/framester/schema/subsumes"/>
-    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="https://w3id.org/framester/schema/subsumedUnder"/>
     
 
 
     <!-- https://w3id.org/framester/schema/subsumes -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/framester/schema/subsumes"/>
-    
-
-
-    <!-- https://w3id.org/framester/wn/wn30/schema/attributeOf -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/framester/wn/wn30/schema/attributeOf"/>
-    
-
-
-    <!-- https://w3id.org/musco#depicts -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/musco#depicts">
-        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#expresses"/>
-        <owl:inverseOf rdf:resource="https://w3id.org/musco#isDepictedIn"/>
-        <rdfs:domain rdf:resource="https://w3id.org/musco#ImageObject"/>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://w3id.org/musco#VGDepictedObject"/>
-                    <rdf:Description rdf:about="https://w3id.org/musco#VGDepictedRegion"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
-        <rdfs:comment>Some ImageObject depicts some DepictedObject or DepictedRegion.</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/musco#evokesFREDFrames -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/musco#evokesFREDFrames">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/framester/schema/evokes"/>
-        <owl:inverseOf rdf:resource="https://w3id.org/musco#isFredFrameEvokedBy"/>
-        <rdfs:domain rdf:resource="https://w3id.org/musco#VGDepictedRegion"/>
-        <rdfs:range rdf:resource="https://w3id.org/framester/schema/ConceptualFrame"/>
-        <rdfs:comment>Some DepictedRegion evokes some frame. (Note that the frame is evoked in the graph produced by FRED as output of the description of the DepictedRegion.</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/musco#hasObjAttribute -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/musco#hasObjAttribute">
-        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isRelatedToConcept"/>
-        <owl:inverseOf rdf:resource="https://w3id.org/musco#isObjAttributeOf"/>
-        <rdfs:domain rdf:resource="https://w3id.org/musco#VGDepictedObject"/>
-        <rdfs:range rdf:resource="https://w3id.org/musco#VGObjectAttr"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/musco#hasRelObject -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/musco#hasRelObject">
-        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#classifies"/>
-        <owl:inverseOf rdf:resource="https://w3id.org/musco#isRelObjectOf"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/musco#VGObjectRel"/>
-        <rdfs:range rdf:resource="https://w3id.org/musco#VGDepictedObject"/>
-        <rdfs:comment>Some ObjectRelation takes as Object some DepictedObject.</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/musco#hasRelSubject -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/musco#hasRelSubject">
-        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#classifies"/>
-        <owl:inverseOf rdf:resource="https://w3id.org/musco#isRelSubjectOf"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/musco#VGObjectRel"/>
-        <rdfs:range rdf:resource="https://w3id.org/musco#VGDepictedObject"/>
-        <rdfs:comment>Some ObjectRelation takes as Subject some DepictedObject.</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/musco#includesDepictedObject -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/musco#includesDepictedObject">
-        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#includesObject"/>
-        <owl:inverseOf rdf:resource="https://w3id.org/musco#isDepictedObjectIncludedIn"/>
-        <rdfs:domain rdf:resource="https://w3id.org/musco#VGDepictedRegion"/>
-        <rdfs:range rdf:resource="https://w3id.org/musco#VGDepictedObject"/>
-        <rdfs:comment>Some DepictedRegion has in its Region some DepictedObject.</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/musco#includesObjectRel -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/musco#includesObjectRel">
-        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#includesObject"/>
-        <owl:inverseOf rdf:resource="https://w3id.org/musco#isObjectRelIncludedIn"/>
-        <rdfs:domain rdf:resource="https://w3id.org/musco#VGDepictedRegion"/>
-        <rdfs:range rdf:resource="https://w3id.org/musco#VGObjectRel"/>
-        <rdfs:comment>Some DepictedRegion includes some ObjectRelation.</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/musco#isDepictedIn -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/musco#isDepictedIn">
-        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isExpressedBy"/>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://w3id.org/musco#VGDepictedObject"/>
-                    <rdf:Description rdf:about="https://w3id.org/musco#VGDepictedRegion"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
-        <rdfs:range rdf:resource="https://w3id.org/musco#ImageObject"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/musco#isDepictedObjectIncludedIn -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/musco#isDepictedObjectIncludedIn">
-        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isObjectIncludedIn"/>
-        <rdfs:domain rdf:resource="https://w3id.org/musco#VGDepictedObject"/>
-        <rdfs:range rdf:resource="https://w3id.org/musco#VGDepictedRegion"/>
-        <rdfs:comment>Some DepictedObject is included in some DepictedRegion.</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/musco#isFredFrameEvokedBy -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/musco#isFredFrameEvokedBy">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/framester/schema/evokedBy"/>
-        <rdfs:domain rdf:resource="https://w3id.org/framester/schema/ConceptualFrame"/>
-        <rdfs:range rdf:resource="https://w3id.org/musco#VGDepictedRegion"/>
-        <rdfs:comment>Some Frame is evoked by some Entity in the FRED graph produced by some Description of some DepictedRegion.</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/musco#isObjAttributeOf -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/musco#isObjAttributeOf">
-        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isRelatedToConcept"/>
-        <rdfs:domain rdf:resource="https://w3id.org/musco#VGObjectAttr"/>
-        <rdfs:range rdf:resource="https://w3id.org/musco#VGDepictedObject"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/musco#isObjectRelIncludedIn -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/musco#isObjectRelIncludedIn">
-        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isObjectIncludedIn"/>
-        <rdfs:domain rdf:resource="https://w3id.org/musco#VGObjectRel"/>
-        <rdfs:range rdf:resource="https://w3id.org/musco#VGDepictedRegion"/>
-        <rdfs:comment>Some ObjectRelation is included in some DepictedRegion.</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/musco#isRelObjectOf -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/musco#isRelObjectOf">
-        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isClassifiedBy"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/musco#VGDepictedObject"/>
-        <rdfs:range rdf:resource="https://w3id.org/musco#VGObjectRel"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/musco#isRelSubjectOf -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/musco#isRelSubjectOf">
-        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isClassifiedBy"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/musco#VGDepictedObject"/>
-        <rdfs:range rdf:resource="https://w3id.org/musco#VGObjectRel"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/musco#isTypedBy -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/musco#isTypedBy"/>
     
 
 
@@ -283,70 +626,106 @@ It is furthermore aligned to DUL - Dolce Ultralight foundational Ontology and im
     
 
 
-    <!-- https://w3id.org/musco#hasHeight -->
+    <!-- http://www.semanticweb.org/delfi/ontologies/visense#VShasDataValue -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/musco#hasHeight">
-        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasRegionDataValue"/>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://w3id.org/musco#ImageRegion"/>
-                    <rdf:Description rdf:about="https://w3id.org/musco#VGBoundingBox"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#VShasDataValue">
+        <rdfs:label>has data value</rdfs:label>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/musco#hasWidth -->
+    <!-- http://www.semanticweb.org/delfi/ontologies/visense#VShasRegionDataValue -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/musco#hasWidth">
-        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasRegionDataValue"/>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://w3id.org/musco#ImageRegion"/>
-                    <rdf:Description rdf:about="https://w3id.org/musco#VGBoundingBox"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#VShasRegionDataValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VShasDataValue"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSRegion"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A datatype property that encodes values for a Region, e.g. a float for the Region Height.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense"/>
+        <rdfs:label xml:lang="en">has region data value</rdfs:label>
+        <rdfs:label xml:lang="it">regione ha valore</rdfs:label>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/musco#hasXCoordinate -->
+    <!-- http://www.semanticweb.org/delfi/ontologies/visense#hasHeight -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/musco#hasXCoordinate">
-        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasRegionDataValue"/>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#hasHeight">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VShasRegionDataValue"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://w3id.org/musco#ImageRegion"/>
-                    <rdf:Description rdf:about="https://w3id.org/musco#VGBoundingBox"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#ImageRegion"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#VGBoundingBox"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:label>has height</rdfs:label>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/musco#hasYCoordinate -->
+    <!-- http://www.semanticweb.org/delfi/ontologies/visense#hasObjAttribute -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/musco#hasYCoordinate">
-        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasRegionDataValue"/>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#hasObjAttribute">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VShasDataValue"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VGDepictedObject"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Some Object has as attribute some string.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/delfi/ontologies/visense#hasWidth -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#hasWidth">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VShasRegionDataValue"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://w3id.org/musco#ImageRegion"/>
-                    <rdf:Description rdf:about="https://w3id.org/musco#VGBoundingBox"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#ImageRegion"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#VGBoundingBox"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:label>has width</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/delfi/ontologies/visense#hasXCoordinate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#hasXCoordinate">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VShasRegionDataValue"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#ImageRegion"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#VGBoundingBox"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:label>has x coordinate</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/delfi/ontologies/visense#hasYCoordinate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#hasYCoordinate">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VShasRegionDataValue"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#ImageRegion"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#VGBoundingBox"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:label>has y coordinate</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -362,158 +741,318 @@ It is furthermore aligned to DUL - Dolce Ultralight foundational Ontology and im
     
 
 
-    <!-- https://w3id.org/framester/schema/ConceptualFrame -->
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity -->
 
-    <owl:Class rdf:about="https://w3id.org/framester/schema/ConceptualFrame">
-        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Object"/>
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSEntity"/>
     </owl:Class>
     
 
 
-    <!-- https://w3id.org/framester/schema/WnSynsetFrame -->
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject -->
 
-    <owl:Class rdf:about="https://w3id.org/framester/schema/WnSynsetFrame">
-        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Object"/>
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSInformationObject"/>
     </owl:Class>
     
 
 
-    <!-- https://w3id.org/musco#ImageObject -->
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Object -->
 
-    <owl:Class rdf:about="https://w3id.org/musco#ImageObject">
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Object">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSRegion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Situation -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Situation">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSSituation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialObject -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialObject">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSSocialObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SpaceRegion -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SpaceRegion">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSSpaceRegion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/delfi/ontologies/visense#ImageObject -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#ImageObject">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasLocation"/>
-                <owl:someValuesFrom rdf:resource="https://w3id.org/musco#ImageRegion"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VShasLocation"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#ImageRegion"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject"/>
-        <rdfs:comment>An image is ?</rdfs:comment>
-        <rdfs:label>Image</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSInformationObject"/>
+        <rdfs:comment>An image is a type of information object which has a location in a region of pixels (an ImageRegion). It may depict Objects and evoke ConceptualFrames. </rdfs:comment>
+        <rdfs:label>Image Object</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- https://w3id.org/musco#ImageRegion -->
+    <!-- http://www.semanticweb.org/delfi/ontologies/visense#ImageRegion -->
 
-    <owl:Class rdf:about="https://w3id.org/musco#ImageRegion">
-        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SpaceRegion"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#ImageRegion">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSSpaceRegion"/>
         <rdfs:comment>The total Space Region of some Image.</rdfs:comment>
+        <rdfs:label>Image Region</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- https://w3id.org/musco#VGBoundingBox -->
+    <!-- http://www.semanticweb.org/delfi/ontologies/visense#VGBoundingBox -->
 
-    <owl:Class rdf:about="https://w3id.org/musco#VGBoundingBox">
-        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SpaceRegion"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#VGBoundingBox">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSSpaceRegion"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isLocationOf"/>
-                <owl:someValuesFrom rdf:resource="https://w3id.org/musco#VGDepictedObject"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSisLocationOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VGDepictedObject"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isLocationOf"/>
-                <owl:someValuesFrom rdf:resource="https://w3id.org/musco#VGDepictedRegion"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSisLocationOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VGDepictedRegion"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isPartOf"/>
-                <owl:someValuesFrom rdf:resource="https://w3id.org/musco#ImageRegion"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSisPartOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#ImageRegion"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment>The Space Region physically occupied by some Entity in an ImageRegion. i.e. the box around some Entity parametrized by some coordinates, measured in pixels.</rdfs:comment>
+        <rdfs:comment>The Space Region physically occupied by some Entity in an ImageRegion. i.e. the box that bounds some Entity parametrized by some coordinates, measured in pixels. Defined in the Visual Genome annotation methodology.</rdfs:comment>
+        <rdfs:label>VG Bounding Box</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- https://w3id.org/musco#VGDepictedObject -->
+    <!-- http://www.semanticweb.org/delfi/ontologies/visense#VGDepictedObject -->
 
-    <owl:Class rdf:about="https://w3id.org/musco#VGDepictedObject">
-        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Object"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#VGDepictedObject">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSObject"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasLocation"/>
-                <owl:someValuesFrom rdf:resource="https://w3id.org/musco#VGBoundingBox"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VShasLocation"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VGBoundingBox"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/musco#isRelObjectOf"/>
-                <owl:allValuesFrom rdf:resource="https://w3id.org/musco#VGObjectRel"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#isRelObjectOf"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VGObjectRel"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/musco#isRelSubjectOf"/>
-                <owl:allValuesFrom rdf:resource="https://w3id.org/musco#VGObjectRel"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#isRelSubjectOf"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VGObjectRel"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment>Any DepictedObject.</rdfs:comment>
+        <rdfs:comment>Any DepictedObject according to the Visual Genome annotation methodology.</rdfs:comment>
+        <rdfs:label>VG Depicted Object</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- https://w3id.org/musco#VGDepictedRegion -->
+    <!-- http://www.semanticweb.org/delfi/ontologies/visense#VGDepictedRegion -->
 
-    <owl:Class rdf:about="https://w3id.org/musco#VGDepictedRegion">
+    <owl:Class rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#VGDepictedRegion">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/musco#includesObjectRel"/>
-                <owl:someValuesFrom rdf:resource="https://w3id.org/musco#VGObjectRel"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#includesObjectRel"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VGObjectRel"/>
             </owl:Restriction>
         </owl:equivalentClass>
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/musco#includesDepictedObject"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#includesDepictedObject"/>
                 <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://w3id.org/musco#VGDepictedObject"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VGDepictedObject"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Situation"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSSituation"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasLocation"/>
-                <owl:someValuesFrom rdf:resource="https://w3id.org/musco#VGBoundingBox"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VShasLocation"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VGBoundingBox"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment>A DepictedRegion in an Image. It is treated as a dul:Situation and, in order to be meaningful, also for computational necessity, it is considered &quot;DepictedRegion&quot; any Region including some ObjectRelation and min 2 DepictedObjects.</rdfs:comment>
+        <rdfs:comment>A DepictedRegion in an Image. It is treated as a DUL:Situation and, in order to be meaningful, must include some ObjectRelation and a minimum of 2 DepictedObjects.</rdfs:comment>
+        <rdfs:label>VG Depicted Region</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- https://w3id.org/musco#VGObjectAttr -->
+    <!-- http://www.semanticweb.org/delfi/ontologies/visense#VGObjectAttr -->
 
-    <owl:Class rdf:about="https://w3id.org/musco#VGObjectAttr">
+    <owl:Class rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#VGObjectAttr">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/framester/wn/wn30/schema/attributeOf"/>
-                <owl:someValuesFrom rdf:resource="https://w3id.org/musco#VGDepictedObject"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSattributeOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VGDepictedObject"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Object"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSObject"/>
         <rdfs:comment>An attribute of a specific DepictedObject.</rdfs:comment>
+        <rdfs:label>VG Object Attribute</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- https://w3id.org/musco#VGObjectRel -->
+    <!-- http://www.semanticweb.org/delfi/ontologies/visense#VGObjectRel -->
 
-    <owl:Class rdf:about="https://w3id.org/musco#VGObjectRel">
+    <owl:Class rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#VGObjectRel">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/musco#isObjectRelIncludedIn"/>
-                <owl:someValuesFrom rdf:resource="https://w3id.org/musco#VGDepictedRegion"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#isObjectRelIncludedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VGDepictedRegion"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Object"/>
-        <rdfs:comment>A relation between two DepictedObjects, expressed by a predicate.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSObject"/>
+        <rdfs:comment>A relationship between two DepictedObjects, expressed by a predicate.</rdfs:comment>
+        <rdfs:label>VG Object Relationship</rdfs:label>
     </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/delfi/ontologies/visense#VSConcept -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#VSConcept">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSSocialObject"/>
+        <rdfs:label>Concept</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/delfi/ontologies/visense#VSConceptualFrame -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#VSConceptualFrame">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense/ConceptualFrame"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSObject"/>
+        <rdfs:label>Conceptual Frame</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/delfi/ontologies/visense#VSEntity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#VSEntity">
+        <rdfs:label>Entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/delfi/ontologies/visense#VSInformationObject -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#VSInformationObject">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSEntity"/>
+        <rdfs:label>Information Object</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/delfi/ontologies/visense#VSObject -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#VSObject">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSEntity"/>
+        <rdfs:label>Object</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/delfi/ontologies/visense#VSRegion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#VSRegion">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSEntity"/>
+        <rdfs:label>Region</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/delfi/ontologies/visense#VSSituation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#VSSituation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSEntity"/>
+        <rdfs:label>Situation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/delfi/ontologies/visense#VSSocialObject -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#VSSocialObject">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSObject"/>
+        <rdfs:label>Social Object</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/delfi/ontologies/visense#VSSpaceRegion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#VSSpaceRegion">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSRegion"/>
+        <rdfs:label>Space Region</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/delfi/ontologies/visense#VSWnSynsetFrame -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/delfi/ontologies/visense#VSWnSynsetFrame">
+        <owl:equivalentClass rdf:resource="https://w3id.org/framester/wn/wn30/schema/Synset"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/delfi/ontologies/visense#VSObject"/>
+        <rdfs:label>WN Synset Frame</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/delfi/ontologies/visense/ConceptualFrame -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/delfi/ontologies/visense/ConceptualFrame">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/framester/schema/Frame"/>
+        <rdfs:comment>Frames as intended by Fillmore&apos;s frame semantics: the basic elements of semantic intepretation of natural language, independent from a specific lexicon (but not necessarily from a specific culture), necessarily evoked by any word, typically associated with a real world occurrence (situation) when evoked.
+When considered as multigrade predicates (n-ary relations, with role places and value positions within places), frame elements are binary projections of a multigrade predicate, where the first argument of the projection is always the (reified) event or situation occurring wrt to the evoked frame.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/framester/schema/Frame -->
+
+    <owl:Class rdf:about="https://w3id.org/framester/schema/Frame"/>
+    
+
+
+    <!-- https://w3id.org/framester/wn/wn30/schema/Synset -->
+
+    <owl:Class rdf:about="https://w3id.org/framester/wn/wn30/schema/Synset"/>
 </rdf:RDF>
 
 
 
 <!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
