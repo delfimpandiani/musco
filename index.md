@@ -20,72 +20,50 @@ The approach proposed is to automatically model social concepts based on extract
 
 ![Image](https://github.com/delfimpandiani/musco/blob/main/img/T_Box_0.png)
 
-![Image](https://github.com/delfimpandiani/musco/blob/main/img/T_Box_1.png)
-
 ## MUSCO-TATE
 
 The starting point of this project is one of the richest datasets that include **social concepts referring to non-physical objects** as tags for the content of visual artworks: the [metadata released by The Tate Collection](https://github.com/tategallery/collection) on Github in 2014. This dataset includes the metadata for around 70,000 artworks that [Tate](http://www.tate.org.uk/) owns or jointly owns with the [National Galleries of Scotland](http://www.nationalgalleries.org) as part of [ARTIST ROOMS](http://www.tate.org.uk/artist-rooms). To tag the content of the artworks in their collection, the Tate uses a [subject taxonomy](https://github.com/tategallery/collection/tree/master/processed/subjects) with three levels (0, 1, and 2) of increasing specificity to provide a hierarchy of subject tags (for example; 0 religion and belief, 1 universal religious imagery, 2 blessing). 
 
 This repository holds the `functions.py` file, which defines functions for 
 
-* Preprocessing the Tate Gallery metadata as input source (`create_newdict()`, `get_topConcepts()`, and `get_parent_rels()`)
-* Reconstruction and formalization of the the Tate subject taxonomy (`get_tatetaxonomy_ttl()`)
-* Visualization of the Tate subject taxonomy, allowing manual inspection (`get_all_edges()`, and `get_gv_pdf()`)
-* Identification of social concepts from the Tate taxonomy (`get_sc_dict()`, and `get_narrow_sc_dict()`)
-* Formalization of taxonomic relations between social concepts (`get_sc_tate_taxonomy_ttl()`)
-* Gathering specific artwork details relevant to the tasks proposed in this project (`get_artworks_filenames()`, `get_all_artworks_tags()`, and `get_all_artworks_details()`)
-* Corpus creation: matching social concept to art images (`get_sc_artworks_dict()` and `get_match_details(input_sc)`)
-* Co-occuring tag collection and analysis (`get_all_scs_tag_ids()`, `get_objects_and_actions_dict(input_sc)`, and `get_match_stats()`)
-* Image dominant color analyses (`get_dom_colors()` and `get_avg_sc_contrast()`)
+- Preprocessing the Tate Gallery metadata as input source (`create_newdict()`, `get_topConcepts()`, and `get_parent_rels()`)
+- Reconstruction and formalization of the the Tate subject taxonomy (`get_tatetaxonomy_ttl()`)
+- Visualization of the Tate subject taxonomy, allowing manual inspection (`get_all_edges()`, and `get_gv_pdf()`)
+- Identification of social concepts from the Tate taxonomy (`get_sc_dict()`, and `get_narrow_sc_dict()`)
+- Formalization of taxonomic relations between social concepts (`get_sc_tate_taxonomy_ttl()`)
+- Gathering specific artwork details relevant to the tasks proposed in this project (`get_artworks_filenames()`, `get_all_artworks_tags()`, and `get_all_artworks_details()`)
+- Corpus creation: matching social concept to art images (`get_sc_artworks_dict()` and `get_match_details(input_sc)`)
+- Co-occuring tag collection and analysis (`get_all_scs_tag_ids()`, `get_objects_and_actions_dict(input_sc)`, and `get_match_stats()`)
+- Image dominant color analyses (`get_dom_colors()` and `get_avg_sc_contrast()`)
 
-In order to understand the breadth, abstraction level, and hierarchy of subject tags, I reconstructed the hierarchy of the [Tate subject data](https://github.com/tategallery/collection/tree/master/processed/subjects) by transforming it into a `RDF` file in Turtle `.ttl` format with the MUSCO ontology. [SKOS](https://www.w3.org/TR/skos-primer/#sechierarchy) was used as an initial step because of its simple way to assert that one concept is broader in meaning (i.e. more general) than another, with the skos:broader property. Additionally, I used the `Graphviz` module in order to visualize the hierchy.
+In order to understand the breadth, abstraction level, and hierarchy of subject tags, I reconstructed the hierarchy of the [Tate subject data](https://github.com/tategallery/collection/tree/master/processed/subjects) by transforming it into a `RDF` file in Turtle `.ttl` format with the MUSCO ontology. [SKOS](https://www.w3.org/TR/skos-primer/#sechierarchy) was used as an initial step because of its simple way to assert that one concept is broader in meaning (i.e. more general) than another, with the skos:broader property. Additionally, I used the `Graphviz` module in order to visualize the hierchy. Specific areas where social concepts were most prevalent were identified.
 
+![Image](https://github.com/delfimpandiani/musco/blob/main/img/aareas.png)
+
+
+### Musco-Tate: Expanding the MUSCO Ontology
+
+![Image](https://github.com/delfimpandiani/musco/blob/main/img/T_Box_1.png)
 
 ![Image](https://github.com/delfimpandiani/musco/blob/main/img/T_BOx_addition.png)
 
 ![Image](https://github.com/delfimpandiani/musco/blob/main/img/A_Box.png)
 
-
 Next steps include:
-* Automatic population of a KG with the extracted data
-* Disambiguating the terms, expanding the terminology by leveraging lexical resources such as WordNet, VerbNet, and FrameNet, and studying the terms’ distributional linguistic features.
-* MUSCO’s modular infrastructure allows expansion of types of integrated data (potentially including: other co-occurring social concepts, contrast measures, common shapes, repetition, and other visual patterns, other senses (e.g., sound), facial recognition analysis, distributional semantics information)
-* Refine initial social concepts list, through alignment with the latest cognitive science research as well as through user-based studies.
-* Enlarge and diversify art image corpus after a survey of additional catalogues and collections.
-* Distinguishing artwork medium types
+1. Automatic population of a KG with the extracted data
+2. Disambiguating the terms, expanding the terminology by leveraging lexical resources such as WordNet, VerbNet, and FrameNet, and studying the terms’ distributional linguistic features.
+3. Frame evocation
+4. MUSCO’s modular infrastructure allows expansion of types of integrated data (potentially including: other co-occurring social concepts, contrast measures, common shapes, repetition, and other visual patterns, other senses (e.g., sound), facial recognition analysis, distributional semantics information)
+5. Refine initial social concepts list, through alignment with the latest cognitive science research as well as through user-based studies.
+6. Enlarge and diversify art image corpus after a survey of additional catalogues and collections.
+7. Distinguishing artwork medium types
 
 The use of Tate images in the context of this non-commercial, educational research project falls within the within the [Tate Images Terms of use](https://www.tate.org.uk/about-us/policies-and-procedures/website-terms-use): "Website content that is Tate copyright may be reproduced for the non-commercial purposes of research, private study, criticism and review, or for limited circulation within an educational establishment (such as a school, college or university)."
 
+### Musco-Tate: Experimental Results
 
+![Image](https://github.com/delfimpandiani/musco/blob/main/img/wordclouds.png)
 
-### Markdown
+![Image](https://github.com/delfimpandiani/musco/blob/main/img/cpcons.png)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](https://github.com/delfimpandiani/musco/blob/main/img/A_Box.png)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/delfimpandiani/musco/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+![Image](https://github.com/delfimpandiani/musco/blob/main/img/cphor.png)
