@@ -8,8 +8,8 @@ Goals of this work include:
 * Automatic detection of social concepts in previously unseen art images.
 * Automatic generation of new art images that evoke specific social concepts.
 
-
-![Image](https://github.com/delfimpandiani/musco/blob/main/img/reducedapproach.png)
+https://octodex.github.com/images/yaktocat.png
+![Image](https://delfimpandiani.github.io/musco/images/reducedapproach.png)
 
 
 The approach proposed is to automatically model social concepts based on extraction and integration of multimodal features. Specifically, on sensory-perceptual data, such as pervasive visual features of images which evoke them, along with distributional linguistic patterns of social concept usage. To do so, we have defined the **MUSCO (Multimodal Descriptions of Social Concepts) Ontology**, which uses the Descriptions and Situations (Gangemi & Mika 2003) pattern modularly. It considers the image annotation process a situation representing the state of affairs of all related data (actual multimedia data as well as metadata), whose descriptions give meaning to specific annotation structures and results. It also considers social concepts as entities defined in multimodal description frames. 
