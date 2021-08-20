@@ -14,6 +14,9 @@ Goals of this work include:
 
 The approach proposed is to automatically model social concepts based on extraction and integration of multimodal features. Specifically, on sensory-perceptual data, such as pervasive visual features of images which evoke them, along with distributional linguistic patterns of social concept usage. To do so, we have defined the **MUSCO (Multimodal Descriptions of Social Concepts) Ontology**, which uses the Descriptions and Situations (Gangemi & Mika 2003) pattern modularly. It considers the image annotation process a situation representing the state of affairs of all related data (actual multimedia data as well as metadata), whose descriptions give meaning to specific annotation structures and results. It also considers social concepts as entities defined in multimodal description frames. 
 
+![Image](https://github.com/delfimpandiani/musco/blob/main/img/T_Box.png)
+
+![Image](https://github.com/delfimpandiani/musco/blob/main/img/A_Box.png)
 
 ## MUSCO-TATE
 
