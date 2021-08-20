@@ -16,9 +16,7 @@ The approach proposed is to automatically model social concepts based on extract
 
 ![Image](https://delfimpandiani.github.io/musco/images/T_Box_0.png)
 
-<iframe src="https://www.visualdataweb.de/webvowl/#iri=https://w3id.org/musco" style="width: 500px; height: 130px; border: 0px"></iframe>
-
-Check out MUSCO interactively through [WebVOWL] (http://www.visualdataweb.de/webvowl/#iri=https://w3id.org/musco).
+Check out MUSCO interactively through [WebVOWL](http://www.visualdataweb.de/webvowl/#iri=https://w3id.org/musco).
 
 [link](![Image](https://delfimpandiani.github.io/musco/images/webvowl.png))
 
