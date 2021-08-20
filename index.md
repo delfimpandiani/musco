@@ -20,8 +20,6 @@ Check out MUSCO interactively through [WebVOWL](http://www.visualdataweb.de/webv
 
 <a href="http://www.visualdataweb.de/webvowl/#iri=https://w3id.org/musco"><img src="https://delfimpandiani.github.io/musco/images/webvowl.png" alt="WebVOWL"></a>
 
-![Image](https://delfimpandiani.github.io/musco/images/webvowl.png)
-
 ## MUSCO-TATE
 
 The starting point of this project is one of the richest datasets that include **social concepts referring to non-physical objects** as tags for the content of visual artworks: the [metadata released by The Tate Collection](https://github.com/tategallery/collection) on Github in 2014. This dataset includes the metadata for around 70,000 artworks that [Tate](http://www.tate.org.uk/) owns or jointly owns with the [National Galleries of Scotland](http://www.nationalgalleries.org) as part of [ARTIST ROOMS](http://www.tate.org.uk/artist-rooms). To tag the content of the artworks in their collection, the Tate uses a [subject taxonomy](https://github.com/tategallery/collection/tree/master/processed/subjects) with three levels (0, 1, and 2) of increasing specificity to provide a hierarchy of subject tags (for example; 0 religion and belief, 1 universal religious imagery, 2 blessing). 
