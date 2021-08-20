@@ -12,11 +12,15 @@ Goals of this work include:
 * Automatic detection of social concepts in previously unseen art images.
 * Automatic generation of new art images that evoke specific social concepts.
 
+
+![Image](https://github.com/delfimpandiani/musco/blob/main/img/reducedapproach.png)
+
+
 The approach proposed is to automatically model social concepts based on extraction and integration of multimodal features. Specifically, on sensory-perceptual data, such as pervasive visual features of images which evoke them, along with distributional linguistic patterns of social concept usage. To do so, we have defined the **MUSCO (Multimodal Descriptions of Social Concepts) Ontology**, which uses the Descriptions and Situations (Gangemi & Mika 2003) pattern modularly. It considers the image annotation process a situation representing the state of affairs of all related data (actual multimedia data as well as metadata), whose descriptions give meaning to specific annotation structures and results. It also considers social concepts as entities defined in multimodal description frames. 
 
-![Image](https://github.com/delfimpandiani/musco/blob/main/img/T_Box.png)
+![Image](https://github.com/delfimpandiani/musco/blob/main/img/T_Box_0.png)
 
-![Image](https://github.com/delfimpandiani/musco/blob/main/img/A_Box.png)
+![Image](https://github.com/delfimpandiani/musco/blob/main/img/T_Box_1.png)
 
 ## MUSCO-TATE
 
@@ -35,6 +39,12 @@ This repository holds the `functions.py` file, which defines functions for
 * Image dominant color analyses (`get_dom_colors()` and `get_avg_sc_contrast()`)
 
 In order to understand the breadth, abstraction level, and hierarchy of subject tags, I reconstructed the hierarchy of the [Tate subject data](https://github.com/tategallery/collection/tree/master/processed/subjects) by transforming it into a `RDF` file in Turtle `.ttl` format with the MUSCO ontology. [SKOS](https://www.w3.org/TR/skos-primer/#sechierarchy) was used as an initial step because of its simple way to assert that one concept is broader in meaning (i.e. more general) than another, with the skos:broader property. Additionally, I used the `Graphviz` module in order to visualize the hierchy.
+
+
+![Image](https://github.com/delfimpandiani/musco/blob/main/img/T_BOx_addition.png)
+
+![Image](https://github.com/delfimpandiani/musco/blob/main/img/A_Box.png)
+
 
 Next steps include:
 * Automatic population of a KG with the extracted data
