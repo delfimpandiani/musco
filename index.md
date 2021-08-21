@@ -58,7 +58,7 @@ MUSCO’s architecture is deliberately modular, such that an ImageAnnotationDesc
 **The MUSCO Ontology’s reuse of the DnS pattern is modular: defining a general description for the image annotation situation, composed of simpler, more specific descriptions which give meaning to specific annotation structures and results. All classes in the figure belong to the namespace of the MUSCO ontology defined in this work.**
 
 
-<p style="text-align:left; width:50%;"><img src="https://delfimpandiani.github.io/musco/images/T_BOx_addition.png" alt="Tbox_addition"></p>
+<p style="text-align:right; width:50%;"><img src="https://delfimpandiani.github.io/musco/images/T_BOx_addition.png" alt="Tbox_addition"></p>
 
 
 **Addition to the MUSCO ontology model to formalize the use of concept schemes coming from collections’ or other datasets’ taxonomies, such as the Tate’s subject taxonomy. All classes with no explicit namespace belong to the namespace of the MUSCO ontology.**
