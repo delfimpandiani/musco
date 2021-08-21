@@ -59,7 +59,7 @@ MUSCO’s architecture is deliberately modular, such that an ImageAnnotationDesc
 
 ![Image](https://delfimpandiani.github.io/musco/images/T_BOx_addition.png)
 
-<p style="text-align:center; width:100%;"><img src="https://delfimpandiani.github.io/musco/images/T_BOx_addition.png" alt="Tbox_addition"></p>
+<p style="text-align:center; width:50%;"><img src="https://delfimpandiani.github.io/musco/images/T_BOx_addition.png" alt="Tbox_addition"></p>
 
 
 **Addition to the MUSCO ontology model to formalize the use of concept schemes coming from collections’ or other datasets’ taxonomies, such as the Tate’s subject taxonomy. All classes with no explicit namespace belong to the namespace of the MUSCO ontology.**
