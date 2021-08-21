@@ -16,14 +16,12 @@ So far, we have completed the following:
 * Provide all software, data sources, and results to allow the reproducibility of our experiment.
 
 ![Image](https://delfimpandiani.github.io/musco/images/reducedapproach.png)
-**The pipeline under development aims to populate a large scale, ontology-based Social Concepts Knowledge Graph that describes social concepts with multimodal frames.
-**
+**The pipeline under development aims to populate a large scale, ontology-based Social Concepts Knowledge Graph that describes social concepts with multimodal frames.**
 
 The approach proposed is to automatically model social concepts based on extraction and integration of multimodal features. Specifically, on sensory-perceptual data, such as pervasive visual features of images which evoke them, along with distributional linguistic patterns of social concept usage. To do so, we have defined the **MUSCO (Multimodal Descriptions of Social Concepts) Ontology**, which uses the Descriptions and Situations (Gangemi & Mika 2003) pattern modularly. It considers the image annotation process a situation representing the state of affairs of all related data (actual multimedia data as well as metadata), whose descriptions give meaning to specific annotation structures and results. It also considers social concepts as entities defined in multimodal description frames. 
 
 ![Image](https://delfimpandiani.github.io/musco/images/T_Box_0.png)
-**The MUSCO Ontology is aligned to and reuses patterns from DOLCE+DnS Ultralite foundational ontology in order to represent and give meaning to all data created during an image annotation process. All un-prefixed classes belong to the namespace of the MUSCO ontology.
-**
+**The MUSCO Ontology is aligned to and reuses patterns from DOLCE+DnS Ultralite foundational ontology in order to represent and give meaning to all data created during an image annotation process. All un-prefixed classes belong to the namespace of the MUSCO ontology.**
 
 Check out MUSCO interactively through [WebVOWL](http://www.visualdataweb.de/webvowl/#iri=https://w3id.org/musco).
 
@@ -48,23 +46,20 @@ This repository holds the `functions.py` file, which defines functions for
 In order to understand the breadth, abstraction level, and hierarchy of subject tags, I reconstructed the hierarchy of the [Tate subject data](https://github.com/tategallery/collection/tree/master/processed/subjects) by transforming it into a `RDF` file in Turtle `.ttl` format with the MUSCO ontology. [SKOS](https://www.w3.org/TR/skos-primer/#sechierarchy) was used as an initial step because of its simple way to assert that one concept is broader in meaning (i.e. more general) than another, with the skos:broader property. Additionally, I used the `Graphviz` module in order to visualize the hierchy. Specific areas where social concepts were most prevalent were identified.
 
 ![Image](https://delfimpandiani.github.io/musco/images/aareas.png)
-**Three main areas of interest for the identification of social concepts within the Tate subject taxonomy. Social concepts such as “destruction”, “peace”, “wealth”, “courage” (surrounding “emotions, concepts and ideas”), “consumerism”, “freedom”, “slavery”, “nationalism”, “ecology” (surrounding “society”), “magic”, “enchantment”, “worship”, “blessing” (surrounding “religion and belief”), among others, were identified in these areas.
-**
+**Three main areas of interest for the identification of social concepts within the Tate subject taxonomy. Social concepts such as “destruction”, “peace”, “wealth”, “courage” (surrounding “emotions, concepts and ideas”), “consumerism”, “freedom”, “slavery”, “nationalism”, “ecology” (surrounding “society”), “magic”, “enchantment”, “worship”, “blessing” (surrounding “religion and belief”), among others, were identified in these areas.**
 
 ### Musco-Tate: Expanding the MUSCO Ontology
 
 MUSCO’s architecture is deliberately modular, such that an ImageAnnotationDescription can be modularized into sub-descriptions that capture complex structures to be annot- ated. At this stage, we have identified three complex structures to be annotated in art images evoking certain social concepts: dominant colors, depicted physical objects, and depicted actions. As such, in the MUSCO ontology we define the general description ImageAnnotationDescription, which is satisfied by the general ImageAnnotationSituation, and which is composed by three more specific descriptions (DominantColorDescription, PORecognitionDescription, and ActionRecognitionDescription) that define concepts and give meaning to data extracted in the context of each of the complex structures (see Figure 3). Finally, the MUSCO Ontology defines the description class SCMultiModalFrame, which (a) defines a SocialConcept, (b) is used by a ImageAnnotationSituation, and (c) is evoked by an ImageObject. The ontology also already allows for the conjunct expression of data coming from linguistic and lexical resources through classes such as WnSynsetFrame and ConceptualFrame. Even though the current version of the MUSCO ontology is still under a process of revision and editing, in its current state, it already includes the entities, resources, and relationships necessary to integrate the experimental outputs presented in this paper.
 
 ![Image](https://delfimpandiani.github.io/musco/images/T_Box_1.png)
-**The MUSCO Ontology’s reuse of the DnS pattern is modular: defining a general description for the image annotation situation, composed of simpler, more specific descriptions which give meaning to specific annotation structures and results. All classes in the figure belong to the namespace of the MUSCO ontology defined in this work.
-**
+**The MUSCO Ontology’s reuse of the DnS pattern is modular: defining a general description for the image annotation situation, composed of simpler, more specific descriptions which give meaning to specific annotation structures and results. All classes in the figure belong to the namespace of the MUSCO ontology defined in this work.**
 
 ![Image](https://delfimpandiani.github.io/musco/images/T_BOx_addition.png)
-**Addition to the MUSCO ontology model to formalize the use of concept schemes coming from collections’ or other datasets’ taxonomies, such as the Tate’s subject taxonomy. All classes with no explicit namespace belong to the namespace of the MUSCO ontology.
-**
+**Addition to the MUSCO ontology model to formalize the use of concept schemes coming from collections’ or other datasets’ taxonomies, such as the Tate’s subject taxonomy. All classes with no explicit namespace belong to the namespace of the MUSCO ontology.**
+
 ![Image](https://delfimpandiani.github.io/musco/images/A_Box.png)
-**Example use of the MUSCO ontology to formalize multimodal features extracted from one image (dominant color bright yellow, depiction of the physical object oven, and depiction of the action baking), the image’s evocation of the social concept “consumerism”, and the concept’s description as a multimodal frame. All arrows with white arrowheads stand for the relation rdf:type.
-**
+**Example use of the MUSCO ontology to formalize multimodal features extracted from one image (dominant color bright yellow, depiction of the physical object oven, and depiction of the action baking), the image’s evocation of the social concept “consumerism”, and the concept’s description as a multimodal frame. All arrows with white arrowheads stand for the relation rdf:type.**
 
 
 ### Musco-Tate: Experimental Results
@@ -72,12 +67,10 @@ MUSCO’s architecture is deliberately modular, such that an ImageAnnotationDesc
 Our experiments on the co-occurrence of physical objects and actions show that it is possible to develop computational techniques that mirror the idea of symbol grounding and acquired embodiment, i.e., it is possible to identify perceptual features of concrete objects and actions that co-occur with social concepts, at least in the context of art images. While there seems to be some regularity in the results, the low frequencies of co-occurrence suggest that further research is needed to understand which of these objects and actions, if any, have a substantial effect on the evocation of a social concept. A manual examination of the top ten most frequent concepts co-occurring with social concepts (some of them presented in Table 3 and Table 4) suggest some regularity in the physical objects and actions that most frequently co-occur with certain social concepts in these art images. Most of these co-occurrences seem to agree with intuition (i.e., “consumerism” co-occurring with “clothing”, “food and drink”, and “product packaging”; “horror” co-occurring with “monster”, “recoiling” and “screaming”). The results of the color analyses, visible in the proportional color palettes presented in Figure 8, also strongly suggest a certain degree of regularity in the color features of Tate art images that evoke certain social concepts. As with the top co-occurrence results, at first sight the color palettes seem to agree with intuition (i.e, “consumerism” showing a greater luminosity and variety of bright color, as in the aisles of a supermarket; “horror” showing dark and less varied colors and tones, as in typical scenes from horror movies).
 
 ![Image](https://delfimpandiani.github.io/musco/images/wordclouds.png)
-**Wordclouds for the top 50 co-occurring object (top) and action (bottom) tags for all artworks tagged with “consumerism” (left) and with “horror” (right). Larger words more frequently co-occurred with the social concept of interest.
-**
+**Wordclouds for the top 50 co-occurring object (top) and action (bottom) tags for all artworks tagged with “consumerism” (left) and with “horror” (right). Larger words more frequently co-occurred with the social concept of interest.**
 
 ![Image](https://delfimpandiani.github.io/musco/images/palettes.png)
-**Proportional palettes of 30 paintings and print images tagged with “consumerism” (left) and with “horror” (right).
-**
+**Proportional palettes of 30 paintings and print images tagged with “consumerism” (left) and with “horror” (right).**
 
 Next steps include:
 1. Automatic population of a KG with the extracted data
