@@ -1,0 +1,193 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <https://w3id.org/musco#> .
+
+:sc_consumerism a :SocialConcept .
+
+:mf_consumerism a :SCMultimodalFrame .
+
+:tate_taxonomy a :DataSetTaxonomy .
+
+:tax_subject_4063
+	a :TaxonomySubject ;
+	skos:inScheme :tate_taxonomy;
+	skos:broader :158 ;
+	rdfs:label "consumerism" .
+
+:tax_subject_158
+	a :TaxonomySubject ;
+	skos:inScheme :tate_taxonomy;
+	skos:broader :145 ;
+	rdfs:label "social comment" .
+
+:tax_subject_145
+	a :TaxonomySubject ;
+	skos:inScheme :tate_taxonomy;
+	rdfs:label "society" .
+
+:img_ann_desc_tate a :ImageAnnotationDescription ;
+	:hasSubDescription :dom_color_desc_tate ;
+	:hasSubDescription :po_rec_desc_tate ;
+	:hasSubDescription :act_rec_desc_tate .	
+
+:dom_color_desc_tate a :DominantColorDescription ;
+	:defines :DominantColorRole ;
+	:defines :pale_taupe ;
+	:defines :martini ;
+	:defines :jon ;
+	:defines :old_copper ;
+	:defines :rust .
+
+:po_rec_desc_tate a :PORecognitionDescription ;
+	:defines :PhysicalObjectRole ;
+	:defines :lipstick ;
+	:defines :radio ;
+	:defines :kettle ;
+	:defines :soft_drink ;
+	:defines :woman .
+
+:act_rec_desc_tate a :ActionRecognitionDescription ;
+	:defines :ActionRole ;
+	:defines :smiling ;
+	:defines :cleaning .
+
+:DominantColorRole a :ImgAnnotationRole .
+
+:PhysicalObjectRole a :ImgAnnotationRole .
+
+:ActionRole a :ImgAnnotationRole .
+
+:img_ann_sit_tate_T06934 a :ImageAnnotationSituation ;
+	:satisfies :img_ann_desc_tate ;
+	:satisfies :dom_color_desc_tate ;
+	:satisfies :po_rec_desc_tate ;
+	:satisfies :act_rec_desc_tate .
+
+:img_object_T06934 
+	a :ImageObject ;
+	:realizedBy :img_data_T06934 ;
+	:hasAnnotationSituation :img_ann_sit_tate_T06934 .
+
+:img_data_T06934 a :ImageData .
+
+:domcolor1_img_T06934 a :DominantColorAnnotation ;
+	:hasRole :DominantColorRole ;
+	:hasCoverage 0.361^^xsd:decimal ;
+	:aboutColor :pale_taupe ;
+	:hasSetting img_ann_sit_tate_T06934 .
+
+:domcolor2_img_T06934 a :DominantColorAnnotation ;
+	:hasRole :DominantColorRole ;
+	:hasCoverage 0.301^^xsd:decimal ;
+	:aboutColor :martini ;
+	:hasSetting img_ann_sit_tate_T06934 .
+
+:domcolor3_img_T06934 a :DominantColorAnnotation ;
+	:hasRole :DominantColorRole ;
+	:hasCoverage 0.125^^xsd:decimal ;
+	:aboutColor :jon ;
+	:hasSetting img_ann_sit_tate_T06934 .
+
+:domcolor4_img_T06934 a :DominantColorAnnotation ;
+	:hasRole :DominantColorRole ;
+	:hasCoverage 0.095^^xsd:decimal ;
+	:aboutColor :old_copper ;
+	:hasSetting img_ann_sit_tate_T06934 .
+
+:domcolor5_img_T06934 a :DominantColorAnnotation ;
+	:hasRole :DominantColorRole ;
+	:hasCoverage 0.035^^xsd:decimal ;
+	:aboutColor :rust ;
+	:hasSetting img_ann_sit_tate_T06934 .
+
+:pale_taupe a :DominantColor ;
+	:classifies :186_156_119 .
+
+:martini a :DominantColor ;
+	:classifies :177_162_157 .
+
+:jon a :DominantColor ;
+	:classifies :67_57_62 .
+
+:old_copper a :DominantColor ;
+	:classifies :116_77_62 .
+
+:rust a :DominantColor ;
+	:classifies :177_98_15 .
+
+:186_156_119 a :RGBCode ;
+	:rgbCoordinateRed 186^xsd:nonNegativeInteger ;
+	:rgbCoordinateGreen 156^xsd:nonNegativeInteger ;
+	:rgbCoordinateBlue 119^xsd:nonNegativeInteger .
+
+:177_162_157 a :RGBCode ;
+	:rgbCoordinateRed 177^xsd:nonNegativeInteger ;
+	:rgbCoordinateGreen 162^xsd:nonNegativeInteger ;
+	:rgbCoordinateBlue 157^xsd:nonNegativeInteger .
+
+:67_57_62 a :RGBCode ;
+	:rgbCoordinateRed 67^xsd:nonNegativeInteger ;
+	:rgbCoordinateGreen 57^xsd:nonNegativeInteger ;
+	:rgbCoordinateBlue 62^xsd:nonNegativeInteger .
+
+:116_77_62 a :RGBCode ;
+	:rgbCoordinateRed 116^xsd:nonNegativeInteger ;
+	:rgbCoordinateGreen 77^xsd:nonNegativeInteger ;
+	:rgbCoordinateBlue 62^xsd:nonNegativeInteger .
+
+:177_98_15 a :RGBCode ;
+	:rgbCoordinateRed 177^xsd:nonNegativeInteger ;
+	:rgbCoordinateGreen 98^xsd:nonNegativeInteger ;
+	:rgbCoordinateBlue 15^xsd:nonNegativeInteger .
+
+:po1_img_T06934 a :PhysicalObjectAnnotation ;
+	:hasRole :PhysicalObjectRole ;
+	:aboutPOType :lipstick ;
+	:hasSetting img_ann_sit_tate_T06934 .
+
+:po2_img_T06934 a :PhysicalObjectAnnotation ;
+	:hasRole :PhysicalObjectRole ;
+	:aboutPOType :radio ;
+	:hasSetting img_ann_sit_tate_T06934 .
+
+:po3_img_T06934 a :PhysicalObjectAnnotation ;
+	:hasRole :PhysicalObjectRole ;
+	:aboutPOType :kettle ;
+	:hasSetting img_ann_sit_tate_T06934 .
+
+:po4_img_T06934 a :PhysicalObjectAnnotation ;
+	:hasRole :PhysicalObjectRole ;
+	:aboutPOType :soft_drink ;
+	:hasSetting img_ann_sit_tate_T06934 .
+
+:po5_img_T06934 a :PhysicalObjectAnnotation ;
+	:hasRole :PhysicalObjectRole ;
+	:aboutPOType :woman ;
+	:hasSetting img_ann_sit_tate_T06934 .
+
+:lipstick a :POType .
+
+:radio a :POType .
+
+:kettle a :POType .
+
+:soft_drink a :POType .
+
+:woman a :POType .
+
+:act1_img_T06934 a :ActionAnnotation ;
+	:hasRole :ActionRole ;
+	:aboutActionType :smiling ;
+	:hasSetting img_ann_sit_tate_T06934 .
+
+:act2_img_T06934 a :ActionAnnotation ;
+	:hasRole :ActionRole ;
+	:aboutActionType :cleaning ;
+	:hasSetting img_ann_sit_tate_T06934 .
+
+:smiling a :ActionType .
+
+:cleaning a :ActionType .
+

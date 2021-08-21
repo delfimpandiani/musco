@@ -168,7 +168,7 @@ def get_tatetaxonomy_ttl():
 		print('@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .', file=f)
 		print('@prefix skos: <http://www.w3.org/2004/02/skos/core#> .', file=f)
 		print('@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .', file=f)
-		print('@prefix : <https://w3id.org/musco/> .\n', file=f)
+		print('@prefix : <https://w3id.org/musco#> .\n', file=f)
 		print(':tate_taxonomy a :DataSetTaxonomy .\n', file=f)
 		for key, value in newdict.items():
 			if key in topConcepts:
@@ -183,7 +183,7 @@ def get_tatetaxonomy_ttl():
 						print(':tax_subject_' + str(key), file=f)
 						print('\t a :TaxonomySubject ;', file=f)
 						print('\t skos:inScheme :tate_taxonomy;', file=f)
-						print('\t skos:broader :' + str(concept_dict['parent0']) + ' ;', file=f)
+						print('\t skos:broader :tax_subject_' + str(concept_dict['parent0']) + ' ;', file=f)
 						print('\t rdfs:label "' + str(value) + '" .', file=f)
 						keys_skosed += 1
 				for concept_dict in level2list:
@@ -191,7 +191,7 @@ def get_tatetaxonomy_ttl():
 						print(':tax_subject_' + str(key), file=f)
 						print('\t a :TaxonomySubject ;', file=f)
 						print('\t skos:inScheme :tate_taxonomy;', file=f)
-						print('\t skos:broader :' + str(concept_dict['parent1']) + ' ;', file=f)
+						print('\t skos:broader :tax_subject_' + str(concept_dict['parent1']) + ' ;', file=f)
 						print('\t rdfs:label "' + str(value) + '" .', file=f)
 						keys_skosed += 1
 			keys_examined += 1
@@ -315,7 +315,7 @@ def get_sc_tate_taxonomy_ttl():
 		print('@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .', file=f)
 		print('@prefix skos: <http://www.w3.org/2004/02/skos/core#> .', file=f)
 		print('@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .', file=f)
-		print('@prefix : <https://w3id.org/musco/> .\n', file=f)
+		print('@prefix : <https://w3id.org/musco#> .\n', file=f)
 		print(':tate_taxonomy a :DataSetTaxonomy .\n', file=f)
 		for key, value in newdict.items():
 			if value in sc_list:
@@ -334,7 +334,7 @@ def get_sc_tate_taxonomy_ttl():
 								print(':tax_subject_' + str(key), file=f)
 								print('\t a :TaxonomySubject ;', file=f)
 								print('\t skos:inScheme :tate_taxonomy;', file=f)
-								print('\t skos:broader :' + str(concept_dict['parent0']) + ' ;', file=f)
+								print('\t skos:broader :tax_subject_' + str(concept_dict['parent0']) + ' ;', file=f)
 								print('\t rdfs:label "' + str(value) + '" .', file=f)
 								keys_skosed += 1
 								sc_dict[key] = value 
@@ -344,7 +344,7 @@ def get_sc_tate_taxonomy_ttl():
 								print(':tax_subject_' + str(key), file=f)
 								print('\t a :TaxonomySubject ;', file=f)
 								print('\t skos:inScheme :tate_taxonomy;', file=f)
-								print('\t skos:broader :' + str(concept_dict['parent1']) + ' ;', file=f)
+								print('\t skos:broader :tax_subject_' + str(concept_dict['parent1']) + ' ;', file=f)
 								print('\t rdfs:label "' + str(value) + '" .', file=f)
 								keys_skosed += 1
 								sc_dict[key] = value
@@ -879,7 +879,7 @@ def get_names_objects_and_actions_dict(input_sc):
 	return objects_names, actions_names
 
 ### ________________________________________________________________
-### get_match_stats(): outputs a csv file with match stats for all 166 SCs
+### get_co_stats(): outputs a csv file with match stats for all 166 SCs
 ######### outputs output/match_stats.csv
 ### ________________________________________________________________
 def get_match_stats():
@@ -1056,7 +1056,7 @@ def get_avg_sc_contrast(sc):
 # ________________________________________________________________
 # ________________________________________________________________
 # CO TAG ANALYSIS
-get_objects_and_actions_dict(572)
+# get_objects_and_actions_dict(572)
 # get_names_objects_and_actions_dict(795)
 # get_match_stats()
 #________________________________________________________________
