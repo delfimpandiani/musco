@@ -50,6 +50,25 @@ In order to understand the breadth, abstraction level, and hierarchy of subject 
 ![Image](https://delfimpandiani.github.io/musco/images/A_Box.png)
 
 
+
+The use of Tate images in the context of this non-commercial, educational research project falls within the within the [Tate Images Terms of use](https://www.tate.org.uk/about-us/policies-and-procedures/website-terms-use): "Website content that is Tate copyright may be reproduced for the non-commercial purposes of research, private study, criticism and review, or for limited circulation within an educational establishment (such as a school, college or university)."
+
+### Musco-Tate: Experimental Results
+
+![Image](https://delfimpandiani.github.io/musco/images/wordclouds.png)
+
+
+<div class="container"> 
+  <img src="https://delfimpandiani.github.io/musco/images/cpcons.png"> 
+  <img src="https://delfimpandiani.github.io/musco/images/cphor.png"> 
+</div> 
+
+![Image](https://delfimpandiani.github.io/musco/images/cpcons.png)
+
+![Image](https://delfimpandiani.github.io/musco/images/cphor.png)
+
+
+
 Next steps include:
 1. Automatic population of a KG with the extracted data
 2. Disambiguating the terms, expanding the terminology by leveraging lexical resources such as WordNet, VerbNet, and FrameNet, and studying the terms’ distributional linguistic features.
@@ -58,13 +77,3 @@ Next steps include:
 5. Refine initial social concepts list, through alignment with the latest cognitive science research as well as through user-based studies.
 6. Enlarge and diversify art image corpus after a survey of additional catalogues and collections.
 7. Distinguishing artwork medium types
-
-The use of Tate images in the context of this non-commercial, educational research project falls within the within the [Tate Images Terms of use](https://www.tate.org.uk/about-us/policies-and-procedures/website-terms-use): "Website content that is Tate copyright may be reproduced for the non-commercial purposes of research, private study, criticism and review, or for limited circulation within an educational establishment (such as a school, college or university)."
-
-### Musco-Tate: Experimental Results
-
-![Image](https://delfimpandiani.github.io/musco/images/wordclouds.png)
-
-![Image](https://delfimpandiani.github.io/musco/images/cpcons.png)
-
-![Image](https://delfimpandiani.github.io/musco/images/cphor.png)
