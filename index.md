@@ -58,6 +58,10 @@ MUSCO’s architecture is deliberately modular, such that an ImageAnnotationDesc
 **The MUSCO Ontology’s reuse of the DnS pattern is modular: defining a general description for the image annotation situation, composed of simpler, more specific descriptions which give meaning to specific annotation structures and results. All classes in the figure belong to the namespace of the MUSCO ontology defined in this work.**
 
 ![Image](https://delfimpandiani.github.io/musco/images/T_BOx_addition.png)
+
+<p style="text-align:center;"><img src="https://delfimpandiani.github.io/musco/images/T_BOx_addition.png" alt="Tbox_addition"></p>
+
+
 **Addition to the MUSCO ontology model to formalize the use of concept schemes coming from collections’ or other datasets’ taxonomies, such as the Tate’s subject taxonomy. All classes with no explicit namespace belong to the namespace of the MUSCO ontology.**
 
 ![Image](https://delfimpandiani.github.io/musco/images/A_Box.png)
@@ -81,7 +85,7 @@ Next steps include:
 4. MUSCO’s modular infrastructure allows expansion of types of integrated data (potentially including: other co-occurring social concepts, contrast measures, common shapes, repetition, and other visual patterns, other senses (e.g., sound), facial recognition analysis, distributional semantics information)
 5. Refine initial social concepts list, through alignment with the latest cognitive science research as well as through user-based studies.
 6. Enlarge and diversify art image corpus after a survey of additional catalogues and collections.
-7. Distinguishing artwork medium types
+9. Distinguishing artwork medium types
 
 
 ## Important Note
